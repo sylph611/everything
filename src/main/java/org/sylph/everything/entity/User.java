@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 
 import java.time.LocalDateTime;
 
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class User {
 
     @Id
@@ -31,6 +33,9 @@ public class User {
 
     @Column(name = "provider_id")
     private String providerId;
+
+    @Column(name = "role")
+    private String role = "USER"; // 기본값은 USER
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
